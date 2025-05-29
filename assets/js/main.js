@@ -113,7 +113,7 @@ class GameControls {
         let resultMSG = "";
         let DefScore = 0;
         (isWin === true ? this.myPicked.appendChild(winner) : this.enemyPicked.appendChild(winner));
-        (isWin === true ? resultMSG = "WIN" : resultMSG = "loose"); 
+        (isWin === true ? resultMSG = "WIN" : resultMSG = "lose"); 
         (isWin === true ? DefScore = 1 : DefScore = -1); 
 
         msg.innerHTML = `<h2>You ${resultMSG}</h2> <button class="again">play again</button>`;
