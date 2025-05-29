@@ -105,6 +105,7 @@ class GameControls {
         winner.classList.add("winner");
         const msg = document.createElement("div");
         msg.classList.add("result");
+        msg.style.animation = "fade-in .5s ease";
         if(myTool === enemyTool) {
             msg.innerHTML = `<h2>TIE</h2> <button class="again">play again</button>`;
             this.fightMenu.appendChild(msg);
