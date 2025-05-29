@@ -8,7 +8,7 @@ class GameControls {
         this.chnageMode = document.querySelector(".change-mode");
         this.iconsMode = document.querySelector(".bg-shape");
         this.iconsImage = document.querySelector(".bg-shape img");
-        this.openRules = document.querySelector(".rules");
+        this.openRules = document.querySelector(".rules-btn");
         this.closeRules = document.querySelector(".close-rules");
         this.mockup = document.querySelector(".action");
         this.fightMenu = document.querySelector(".fight");
@@ -70,7 +70,9 @@ class GameControls {
             counter++;
             if(counter > 3) {
                 clearInterval(enemyChoose);
-                this.result(myTool.id, enemyTool.tool);
+                setTimeout(() => {
+                    this.result(myTool.id, enemyTool.tool);
+                }, 1000);
             } 
         }, 500);
     }
@@ -177,7 +179,7 @@ class GameControls {
     }
 
     rules() {
-        const footer = document.querySelector(".footer_container");
+        const dialog = document.querySelector(".dialog_container");
         const rulesOriginal = document.querySelector(".rules-original");
         const rulesbonus = document.querySelector(".rules-bonus");
         if(this.mode === 1) {
@@ -188,13 +190,13 @@ class GameControls {
             rulesOriginal.classList.add("display-none");
         }
         this.openRules.addEventListener("click", _ => {
-            footer.style.animation = "fade-in .5s ease";
-            footer.classList.remove("display-none");
+            dialog.style.animation = "fade-in .5s ease";
+            dialog.classList.remove("display-none");
         })
         this.closeRules.addEventListener("click", _ => {
-            footer.style.animation = "fade-out .5s ease";
+            dialog.style.animation = "fade-out .5s ease";
             setTimeout(() => {
-                footer.classList.add("display-none");
+                dialog.classList.add("display-none");
             }, 499);
         })
     }

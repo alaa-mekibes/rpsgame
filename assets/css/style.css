@@ -13,6 +13,7 @@
 --FW-700: 700;
 --section-padding: 1.25rem;
 --Shadow: #00000038;
+--transition-btn: .2s;
 }
 /* Global Rules */
 * {
@@ -74,6 +75,7 @@ body {
 .header_container .container .logo .bonus {font-size: .85rem;}
 .header_container .container .score {
     background-color: var(--White);
+    border-radius: 8px;
     max-height: 100%;
     display: flex;
     flex-direction: column;
@@ -123,7 +125,7 @@ body {
     position: absolute;
     cursor: pointer;
     scale: 1;
-    transition: .2s;
+    transition: var(--transition-btn);
 }
 .icons-menu .tool:hover {
     scale: 1.1;
@@ -151,11 +153,13 @@ body {
     width: 70px;
     height: 70px;
     padding: 10px;
+    object-fit: contain;
+}
+.tool button {
+    box-shadow: 0px 3px var(--Shadow) inset;
     background-color: white;
     border-radius: 50%;
-    z-index: 2;
-    object-fit: contain;
-    box-shadow: 0px 3px var(--Shadow) inset;
+    overflow: hidden;
 }
 
 .bg-shape-triangle ~ .paper {top: -40px; left: -35px;}
@@ -198,7 +202,7 @@ body {
     font-weight: var(--FW-600);
     cursor: pointer;
     color: var(--White);
-    transition: .2s;
+    transition: var(--transition-btn);
     position: relative;
     display: block;
 }
@@ -225,7 +229,7 @@ body {
     margin: auto;
     padding: .5rem 2rem;
 }
-.menu .rules {
+.menu .rules-btn {
     margin: auto;
     padding: .5rem 1rem; 
 }
@@ -281,14 +285,21 @@ body {
 .result .again {
     all: unset;
     background-color: var(--White);
+    border: 1px solid transparent;
     border-radius: 8px;
     color: var(--Dark-Text);
     font-size: .75rem;
     padding: .75rem 3rem;
     cursor: pointer;
+    transition: var(--transition-btn);
+    &:hover {
+        background-color: transparent;
+        border-color: var(--White);
+        color: var(--White);
+    }
 }
 /* Start footer */
-.footer_container {
+.dialog_container {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -300,7 +311,7 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
-.footer_container .head {
+.dialog_container .head {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -318,10 +329,23 @@ body {
         }
     }
 }
-.footer_container .rules {
+.dialog_container .rules {
     margin: auto;
 }
-
+.copyright small {
+    display: block;
+    margin-inline-end: auto;
+    padding: 5px;
+    font-weight: var(--FW-600);
+    color: var(--White);
+    a {
+        color: var(--White);
+        transition: var(--transition-btn);
+        &:hover {
+            color: var(--Dark-Text)
+        }
+    }
+}
 /* Queries */
 @media (min-width: 48rem) {
     .header_container .container {
@@ -345,6 +369,7 @@ body {
     .icon-fight img {
         width: 170px;
         height: 170px;
+        padding: 1.5rem;
     }
     .you-picked, .enemy-picked {
         flex-direction: column-reverse;
@@ -354,7 +379,7 @@ body {
         top: 50%;
         left: 36%;
     }
-    .footer_container {
+    .dialog_container {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -362,7 +387,7 @@ body {
         width: auto;
         height: auto;
     }
-    .footer_container .rules {
+    .dialog_container .rules {
         max-width: 20rem;
     }
 }

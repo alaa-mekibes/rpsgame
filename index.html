@@ -48,18 +48,25 @@
     </article>
     <article class="menu">
       <button type= "button" class="change-mode">change mode</button>
-      <button type= "button" class="rules">rules</button>
+      <button type= "button" class="rules-btn">rules</button>
     </article>
     </div>
   </main>
-  <footer class="footer_container display-none">
-    <div class="head">
-    <h2>rules</h2>
-    <button type="button" class="close-rules"><img src="assets/images/icon-close.svg" alt="close rules"></button>
-    </div>
-    <div class="rules rules-original"><img src="assets/images/image-rules.svg" alt="rules"></div>
-    <div class="rules rules-bonus display-none"><img src="assets/images/image-rules-bonus.png" alt="rules"></div>
-  </footer>
+  <dialog class="dialog_container display-none" aria-labelledby="rules-heading">
+  <div class="head">
+    <h2 id="rules-heading">Rules</h2>
+    <button type="button" class="close-rules" aria-label="Close rules dialog">
+      <img src="assets/images/icon-close.svg" alt="" aria-hidden="true">
+    </button>
+  </div>
+  <div class="rules rules-original">
+    <img src="assets/images/image-rules.svg" alt="Game rules showing rock beats scissors, scissors beat paper, and paper beats rock">
+  </div>
+  <div class="rules rules-bonus display-none">
+    <img src="assets/images/image-rules-bonus.png" alt="Extended game rules including lizard and gun options">
+  </div>
+</dialog>
+  <footer class="copyright display-none"><div class="container"><small>Developed By <a href=""><strong>Alaa MEKIBES</strong></a></small></div></footer>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
