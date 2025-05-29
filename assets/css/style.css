@@ -324,6 +324,9 @@ body {
 
 /* Queries */
 @media (min-width: 48rem) {
+    .header_container .container {
+        max-width: 30rem;
+    }
     .container {
         width: 46.875rem;
     }
