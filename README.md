@@ -1,36 +1,89 @@
-# Frontend Mentor - Rock, Paper, Scissors solution
+# 🎮 Rock, Paper, Scissors Game — Frontend Mentor Challenge
 
-This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is my take on the [Rock, Paper, Scissors challenge](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) from Frontend Mentor. It's a fun project that helped me get more hands-on experience with layout techniques, JS logic, and a bit of UI polish.
 
+---
 
-## Overview
+## 🧠 Overview
 
-### The challenge
+### 💡 The Challenge
 
-Users should be able to:
+The goal was to build an interactive game where:
 
-- View the optimal layout for the game depending on their device's screen size
-- Play Rock, Paper, Scissors against the computer
-- Maintain the state of the score after refreshing the browser _(optional)_
-- **Bonus**: Play Rock, Paper, Scissors, Lizard, Gun against the computer _(optional)_
+* The layout adapts nicely to different screen sizes
+* You can play Rock, Paper, Scissors against a computer opponent
+* Your score is saved even if you refresh the page (localStorage)
+* **Bonus**: I extended the game to support *Rock, Paper, Scissors, Lizard, Gun* — because why not?
 
-### Screenshot
+---
 
-![](/assets/images/screenshot.png)
+### 📸 Screenshot
 
+![Game Screenshot](/assets/images/screenshot.png)
 
-### Links
+---
 
-- [Solution URL](https://github.com/alaa-mekibes/rpsgame)
-- [Live Site URL](https://your-live-site-url.com)
+### 🔗 Links
 
-## My process
+* 📂 [Repo on GitHub](https://github.com/alaa-mekibes/rpsgame)
+* 🚀 [Live Demo](https://rpsgame-neon.vercel.app)
 
-### Built with
+---
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- JS OOP
+## 🛠️ What I Used
+
+* Semantic **HTML5**
+* **CSS** custom properties
+* **Flexbox** and **Grid**
+* Mobile-first approach
+* Vanilla **JavaScript** with **OOP**
+
+---
+
+## 🧱 A Bit About OOP
+
+I used **Object-Oriented Programming** to keep my code clean and modular. Instead of writing everything as separate functions, I wrapped all the logic into a single class: `GameControls`.
+
+This class handles:
+
+* DOM element selection (buttons, images, score display, etc.)
+* Game logic (random choice, who wins, fight animations)
+* UI state updates (score, mode switch, result messages)
+* Event listeners (clicking tools, rules modal, etc.)
+
+### 🔧 Why OOP?
+
+* Keeps related code grouped and easy to maintain
+* Avoids repeating logic everywhere
+* Makes switching between game modes smooth
+* Easier to debug and expand (like adding Lizard/Gun mode)
+
+### 💻 Quick Example
+
+```js
+class GameControls {
+    constructor(mode) {
+        this.mode = mode;
+        this.score = 0;
+        // setup UI references and event listeners
+    }
+
+    fight(playerChoice) {
+        // handles picking, enemy choice, animation, and result
+    }
+
+    result(player, enemy) {
+        // checks who wins and updates the UI and score
+    }
+
+    chooseTool() {
+        // handles user clicks on icons
+    }
+
+    // ... other methods
+}
+```
+
+### 🚀 Bonus
+
+Switching from Rock/Paper/Scissors to the extended version (with Lizard and Gun) only needed a few extra rules inside the same class — no rewrite needed. That’s the power of OOP.
