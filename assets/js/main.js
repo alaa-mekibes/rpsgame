@@ -95,6 +95,8 @@ class GameControls {
     }
 
     result(myTool, enemyTool) {
+        const myPicked = document.querySelector(".you-picked");
+        const enemyPicked = document.querySelector(".enemy-picked");
         const isWin = this.whoBeats(myTool, enemyTool);
         const win = document.querySelectorAll(".winner");
         const result = document.querySelectorAll(".result");
@@ -115,7 +117,7 @@ class GameControls {
         }
         let resultMSG = "";
         let DefScore = 0;
-        (isWin === true ? this.myPicked.appendChild(winner) : this.enemyPicked.appendChild(winner));
+        (isWin === true ? myPicked.appendChild(winner) : enemyPicked.appendChild(winner));
         (isWin === true ? resultMSG = "WIN" : resultMSG = "lose"); 
         (isWin === true ? DefScore = 1 : DefScore = -1); 
 
