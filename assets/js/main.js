@@ -206,5 +206,5 @@ class GameControls {
 }
 
 // main
-const rule = new GameControls(1);
+new GameControls(1);
 
