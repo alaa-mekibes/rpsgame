@@ -172,7 +172,7 @@ body {
 .bg-shape-pentagon ~ .paper {top: 15%; left: calc(100% - 70px);}
 .bg-shape-pentagon ~ .scissors {top: -45px; left: calc(50% - 50px);}
 .bg-shape-pentagon ~ .rock {top: calc(100% - 70px); left: calc(100% - 100px);}
-.bg-shape-pentagon ~ .gun {top: 15%; left: -50px; animation: fade-in ease .5s;}
+.bg-shape-pentagon ~ .gun {top: 15%; left: -35px; animation: fade-in ease .5s;}
 .gun .bg::before {background: radial-gradient(circle at center, var(--Gun-Gradient));}
 .bg-shape-pentagon ~ .lizard {top: calc(100% - 70px); left: calc(0 - 50px); animation: fade-in ease .5s;}
 .lizard .bg::before {background: radial-gradient(circle at center, var(--Lizard-Gradient));}
@@ -263,7 +263,7 @@ body {
     position: relative;
 }
 .winner {
-    --bg: background-color: rgba(255, 255, 255, 0.201);
+    --bg: rgba(255, 255, 255, 0.201);
     position: absolute;
     background-color: var(--bg);
     width: 50px;
